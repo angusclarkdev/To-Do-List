@@ -7,85 +7,71 @@
      checkButton = document.getElementsByClassName('check'),
      deleteButton = document.getElementsByClassName('delete'),
      example = document.getElementById('example'),
-     secondaryButtons = document.getElementById('secondary_buttons')
+     secondaryButtons = document.getElementsByClassName('secondary_buttons'),
+     completed = document.getElementById('completed_title'),
+     item = document.getElementById('item')
   ];
 
-  // Clear field when 'Clear' button clicked
-  clear.addEventListener('click', function() {
-    var input = document.getElementById('input');
-    input.value = '';
-  });
+submit.addEventListener('click', function() {
 
-  // append user input to new li
-  function newItem() {
-    var newLi = document.createElement('li');
-    newLi = tasks.insertBefore(newLi, secondaryButtons); // append new li to ul '#tasks'
-    newLi.innerText = input.value; // print user input in new li
-    //var newSecondaryButtons = document.createElement('li');
-    //newSecondaryButtons.appendChild(newSecondaryButtons);
-  };
+    if (input.value !== "") {
 
-// 'Submit' Clicked
-  submit.addEventListener('click', function() {
-
-    if (input.value === "") {
-      alert('You must first enter a task');
-    } else {
-      newItem();
-      deleteExample();
+      createNewItem()
+      deleteExample()
       input.value = "";
+    } else {
+      alert("You must enter a value")
     }
-  });
+})
 
-  function deleteExample() {
-    if (example !== "") {
-    example.parentNode.removeChild(example);
+clear.addEventListener('click', function() {
+
+  input.value = "";
+
+})
+
+
+
+function deleteExample() {
+  if (example.innerText === 'E.g. "Buy dog food"') {
+    tasks.children[0].remove();
   } else {
 
   }
 
-    //checkButton[0].parentNode.removeChild(checkButton[0]);
-    //deleteButton[0].parentNode.removeChild(deleteButton[0]);
-  }
+}
+function createNewItem(){
+
+    var newUl = item.cloneNode(true);
+    newUl.childNodes[1].innerText = input.value;
+    if (document.getElementById('example')) {
+        tasks.insertBefore(newUl, completed);
+    } else {
+      tasks.insertBefore(newUl, completed);
+
+    }
+}
 
 
-// Object containing check & delete buttons (arrays)
-
-  var secondaryButtonsObj = {
-
-    checkButtons: [
-      checkButton[0]
-    ],
-
-    deleteButtons: [
-      deleteButton[0]
-    ]
-  };
-
-    secondaryButtonsObj.checkButtons[0].addEventListener('click', function() {
-
-    var completed = document.getElementById('completed');
-    var newLi = document.createElement('li');
-    completed.appendChild(newLi);
-    newLi.innerHTML = tasks.firstElementChild.innerHTML;
-    this.parentNode.removeChild(this);
-    deleteButton[0].parentNode.removeChild(deleteButton[0]);
-
-  });
-console.dir(tasks);
-  secondaryButtonsObj.deleteButtons[0].addEventListener('click', function(){
 
 
-  })
+$('#tasks').on('click', '.check', function(e) {
+
+var parent = this.parentNode.parentNode;
+var newLi = document.createElement('li');
+var completed = document.getElementById('completed');
+completed.appendChild(newLi);
+newLi.innerText = parent.children[0].innerText;
+tasks.removeChild(parent)
+
+});
 
 
-  /*
-          var example = tasks.childNodes[1];
-        ;
-          ;
-          alert('clicked');
-          //completed.appendChild(newLi);
-          //newLi.innerText = "New list item";
- */
 
+$('#tasks').on('click', '.delete', function(e) {
+
+    var parent = this.parentNode.parentNode;
+    tasks.removeChild(parent)
+
+});
 }());

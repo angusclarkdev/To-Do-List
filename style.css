@@ -7,6 +7,11 @@ body {
   text-align: center;
   width: 100%;
   color: rgba(0,0,0,0.8);
+
+}
+
+ul {
+  margin: 0;
 }
 
 #container {
@@ -24,7 +29,9 @@ h1 {
   text-shadow: 1px 2px 5px black;
   padding-top: 40px;
 }
-
+h3 {
+  margin: 0;
+}
 .task_input {
   width: 80%;
   height: 1.2rem;
@@ -80,44 +87,55 @@ li {
   border-bottom: 2px solid rgba(255,	0,	0, 0.6);
   color: rgba(255,	0,	0, 0.8);
 }
+.data {
+  margin: 1rem;
+}
 
 .data h3 {
   line-height: 3;
-  margin-left: 1rem;
-  margin-right: 1rem;
   text-align: left;
 }
 .primary_buttons {
   display: flex;
   flex-direction: row;
   justify-content: center;
-
-
 }
-.primary_buttons li {
-  background-color: #fff;
-  cursor: pointer;
+button {
+  font-size: 16px;
+  margin: 10px;
+  color: inherit;
 }
-
 #tasks {
-display: grid;
-grid-template-columns: 1fr 100px;
+  margin-top: 1rem;
 }
-.tasks , .completed li {
+
+#tasks ul {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#tasks , .completed li {
   text-align: left;
   color: #fff;
   text-shadow: 1px 2px 5px black;
-  display: inline-block;
+
 }
 
 
-#secondary_buttons {
+.secondary_buttons {
   display: inline-block;
+  cursor: pointer;
+
 }
 
 i {
-  padding: 5px;
+  grid-row: 1;
+  grid-column: 2;
+  padding: 10px;
   text-shadow: 0px 1px 1px black;
+  display: inline;
+
 }
 
 i.check {

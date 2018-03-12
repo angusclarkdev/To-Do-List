@@ -16,31 +16,40 @@
 
 
       <h1> To Do List </h1>
-      <input id="input" name="input" placeholder="Enter a task here....">
-      </input>
-      <ul class="primary_buttons">
-        <li id="submit_button">Submit</li>
-        <li id="clear_button">Clear</li>
-      </ul>
+      <form class="" method="post" onsubmit="return false">
+
+
+
+
+        <input id="input" name="input" placeholder="Enter a task here....">
+        </input>
+        <ul class="primary_buttons">
+          <button id="submit_button" type="submit">Submit</button>
+          <button id="clear_button" type="button">Clear</button>
+        </ul>
+      </form>
     </div>
-    <div class="data grid">
+    <div class="data">
       <h3 class="tasks_title">Tasks</h3>
-      <ul id="tasks" class="tasks">
-        <li id="example">E.g. "Buy dog food" </li>
+      <div id="tasks">
 
-        <ul id="secondary_buttons"> <i class="fas fa-check check"></i> <i class="fas fa-times delete"></i> </ul>
+        <ul id="item">
+          <li id="example">E.g. "Buy dog food" </li>
+          <ul class="secondary_buttons">
+            <i class="fas fa-check check"></i> <i class="fas fa-times delete "></i>
+          </ul>
+        </ul>
 
-
-      </ul>
-      <h3 class="completed_title">Completed</h3>
-      <ul id="completed" class="completed">
-      </ul>
+        <h3 id="completed_title" class="completed_title ">Completed</h3>
+        <ul id="completed" class="completed">
+      </div>
 
     </div>
   </section>
 
-
-  <script type="text/javascript" src="script.js">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js ">
+  </script>
+  <script type="text/javascript " src="script.js ">
   </script>
 </body>
 
