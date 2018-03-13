@@ -109,11 +109,17 @@ button {
   margin-top: 1rem;
 }
 
-#tasks ul {
+#item {
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+#completed {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 #tasks , .completed li {
   text-align: left;
