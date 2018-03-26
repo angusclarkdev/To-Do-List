@@ -1,4 +1,4 @@
-## To-Do-List
+## To Do List
 This is a simple to do list made with basic CSS and JavaScript.
 * Utilises DOM Manipulation methods such as 'appendChild', 'removeChild', 'insertBefore' and 'cloneNode'.
 * Dynamically created elements using 'createElement'
