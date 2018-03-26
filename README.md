@@ -8,7 +8,7 @@ This is a simple to do list made with basic CSS and JavaScript.
 * I became comfortable with 'dot' and 'brackets' syntax and how they can be used to select specific nodes/children
 * Event delegation and the concept of 'bubbling'
 
-### Date: 
+### Date 
 March '18.
 
 ## Author
