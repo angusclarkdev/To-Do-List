@@ -1,9 +1,21 @@
 html {
-  font-size: 20px;
+  font-size: 30px;
   font-family: 'Open sans', sans-serif;
   height: 100%;
 }
+button {
+  font-size: 25px;
+  margin: 10px;
 
+}
+@media only screen and (min-width: 1000px) {
+    html {
+      font-size: 16px;
+    }
+    button {
+      font-size: inherit;
+    }
+}
 body {
   text-align: center;
   width: 90%;
@@ -107,11 +119,7 @@ li {
   flex-direction: row;
   justify-content: center;
 }
-button {
-  font-size: 16px;
-  margin: 10px;
 
-}
 #tasks {
   margin-top: 1rem;
 }
